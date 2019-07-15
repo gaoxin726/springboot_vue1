@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="js/vuejs-2.5.16.js"></script>
+<body>
+    <div id="app">
+        <span v-if="flag">123</span>
+        <span v-show="flag">木头人</span>
+        <input type="button" v-on:click="fun1()" value="点击">
+        <button @click="fun1()">点击</button>
+    </div>
+</body>
+<script>
+    new Vue({
+        el:"#app",
+        data:{
+            flag:true
+        },
+       methods:{
+            fun1:function () {
+                this.flag=!this.flag;
+            }
+       }
+    });
+</script>
+</html>
