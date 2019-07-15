@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="js/vuejs-2.5.16.js"></script>
+<body>
+<div id="app">
+    Vue:<input type="text" v-on:keydown="fun($event)">
+</div>
+</body>
+<script>
+    //view model
+    new Vue({
+        el:"#app",
+       methods:{
+            fun:function (event) {
+                var keycode=event.keyCode;
+                if(keycode<48 || keycode>57){
+                    //不让键盘生效
+                    event.preventDefault();
+                }
+            }
+       }
+    });
+</script>
+</html>
